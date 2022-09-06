@@ -1,0 +1,75 @@
+#header {
+    background-image: radial-gradient(89.01% 112.44% at 8.9% 11.35%, #ffabd8 2.59%, #fff280 38.54%, #e7ff7d 60.18%, #a4efff 92.1%);
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#header .headerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header .headerContent button {
+    width: 229px;
+    height: 66px;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+
+#header .sliderHeader {
+    display: flex;
+    overflow: scroll;
+    width: calc(100vw - 200px);
+}
+
+#header .sliderHeader::-webkit-scrollbar {
+    display: none;
+}
+
+#about button {
+    width: 229px;
+    height: 66px;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#about .about-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    padding: 50px;
+}
+
+#about h2 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+#about .about-insta {
+    margin: 30px 20px;
+    width: calc(100vw - 40px);
+    overflow-x: scroll;
+    display: flex;
+}
+
+#about span {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.about-insta::-webkit-scrollbar {
+    display: none;
+}

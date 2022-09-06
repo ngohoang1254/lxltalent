@@ -1,0 +1,21 @@
+.benefit-columns .circle {
+    width: 40px;
+    height: 40px;
+    /* font-size: 20px; */
+    border-radius: 50%;
+    color: white;
+    background-color: #145f37;
+    border: 5px solid white;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+}
+
+.benefit-contents {
+    width: calc(100% - 60px);
+    height: 146px;
+}
+
+.benefit-contents p {
+    margin-top: 8px
+}
