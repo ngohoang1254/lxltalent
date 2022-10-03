@@ -35,7 +35,9 @@ export default function Home() {
                 <CServices />
                 */}
                 <div className="partner">
-
+                    <img src={Partner}
+                        style={{ width: "100%" }}
+                    />
                 </div>
                 <CForm />
 
