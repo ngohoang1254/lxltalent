@@ -59,11 +59,11 @@ export default function Footer() {
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-6 footer-links">
-                                <img src={Logo} alt="" style={{
-                                    width: 200,
-                                    cursor: "pointer",
-                                    height: 172
-                                }} />
+                                <span style={{
+                                    fontSize: 50,
+                                    color: "white",
+                                    fontFamily: "Megrim",
+                                }}>TALENT TV</span>
                             </div>
                             {/* <div style={{ "width": "100%" }}>
                                 <img src={flycamImage} style={{ width: "100%" }} />

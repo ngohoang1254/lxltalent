@@ -13,14 +13,20 @@ import insta8 from "../assets/talent/insta8.png";
 import insta9 from "../assets/talent/insta9.png";
 import insta10 from "../assets/talent/insta10.png";
 import insta11 from "../assets/talent/insta11.png";
+import { useNavigate } from "react-router";
 export default function About() {
     const { t } = useTranslation('');
+    const navigate = useNavigate()
     return (
         <section id="about" style={{ backgroundColor: "white", padding: "30px 5px" }}>
             <div className="about-content" >
                 <h2>Join the Lightricks creator community</h2>
                 <span>See how the world's top creators maximize their online presence by creating your own Link in Bio page today. </span>
-                <Button className="mt-4">
+                <Button
+                    onClick={() => {
+                        navigate('/login')
+                    }}
+                    className="mt-4">
                     Get Started
                 </Button>
             </div>

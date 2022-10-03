@@ -1,0 +1,23 @@
+.rightLogin button {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 44px;
+    background: #1f1c26;
+    border: 1px solid #1f1c26;
+    box-sizing: border-box;
+    border-radius: 24px;
+    color: #fff;
+    margin: 10px 0px;
+    font-weight: bold;
+}
+
+.leftLogin {
+    background-image: url('../assets/talent/login.png');
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+}

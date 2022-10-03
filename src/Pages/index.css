@@ -6,3 +6,9 @@
     font-weight: bold;
     border: 2px solid white;
 }
+
+.partner {
+    background-image: url('../assets/talent/partner_img.png');
+    height: 500px;
+    padding: 10px;
+}

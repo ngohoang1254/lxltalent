@@ -17,7 +17,9 @@ import talent7 from "../assets/talent/talent7.png";
 import talent8 from "../assets/talent/talent8.png";
 import talent9 from "../assets/talent/talent9.png";
 import { Button } from "antd";
+import { useNavigate } from "react-router";
 export default function CAuthor() {
+    const navigate = useNavigate();
     return (
 
         <div id="header" className="d-flex align-items-center pt-5">
@@ -39,7 +41,11 @@ export default function CAuthor() {
                 }}>
                     Own your personal brand with a free Link in Bio page
                 </div>
-                <Button className="mt-4">
+                <Button
+                    onClick={() => {
+                        navigate('/login')
+                    }}
+                    className="mt-4">
                     Get Started
                 </Button>
                 <div className="sliderHeader"

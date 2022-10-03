@@ -1,18 +1,83 @@
-import React from "react";
-import author from "../assets/author.jpg";
-import { Input } from "antd";
-export default function CForm() {
+import React, { useRef } from "react";
+import { Button, Form, Input, InputNumber } from 'antd';
+import emailjs from '@emailjs/browser';
+import { FormInstance } from "antd/es/form/Form";
+import "./form.css";
+export default function FormInputField() {
+    // const [form] = Form.useForm();
+    const form = useRef<any>();
+    const layout = {
+        labelCol: { span: 4 },
+        wrapperCol: { span: 16 },
+    };
+    const onFinish = (values: any) => {
+        values.preventDefault();
+        emailjs.sendForm('service_lonv5ce', 'template_op3ghss', form?.current, '2EfXaFjES9gTckh1p')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
     return (
-        <div id="form">
-            <div className="form-content d-flex flex-column justify-content-center align-items-center">
-                <h1>Đăng ký bản tin</h1>
-                <p>Ưu tiên nhận các bài chia sẻ, giá nấm và sự kiện nhận voucher giảm giá mới nhất từ Nấm Xanh.</p>
-                <div className="d-flex justify-content-center form-input">
-                    <Input placeholder="Tên của bạn" />
-                    <Input placeholder="Email của bạn" />
-                </div>
-                <button>Đăng ký</button>
-            </div>
-        </div>
+        <div style={{
+            background: "white",
+            marginTop: 20,
+        }}>
+            <h1
+                style={{
+                    textAlign: "center",
+                    margin: "20px 0px",
+                }}
+            >COMPLETE THIS FORM</h1>
+            <form ref={form} onSubmit={onFinish}>
+                {/* <Form {...layout} name="nest-messages" > */}
+                <Form.Item name={"name"} label="Name" rules={[{ required: true }]}>
+                    <Input
+                        placeholder="Name"
+                    />
+                </Form.Item>
+                <Form.Item name={"email"} label="Email" rules={[{ type: 'email' }, { required: true }]}>
+                    <Input
+                        placeholder="Email"
+
+                    />
+                </Form.Item>
+                <Form.Item name={"contact"} label="Contact Number" >
+                    <Input
+                        placeholder="Phone"
+
+                    />
+                </Form.Item>
+                <Form.Item name={"website"} label="Website">
+                    <Input />
+                </Form.Item>
+                <Form.Item name={"message"} label="message">
+                    <Input.TextArea
+                        style={{
+                            height: 100,
+                        }}
+                    />
+                </Form.Item>
+                <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+                    <Button type="primary" htmlType="submit"
+                        style={{
+                            width: 229,
+                            height: 66,
+                            backgroundColor: "#000",
+                            color: "#fff",
+                            fontWeight: 700,
+                            fontSize: 25,
+                            borderRadius: 50,
+                            cursor: "pointer",
+                        }}
+                    >
+                        Submit
+                    </Button>
+                </Form.Item>
+                {/* </Form> */}
+
+            </form>
+        </div >
     )
 }

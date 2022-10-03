@@ -14,10 +14,17 @@ import CFooter from "../Components/CFooter";
 import CServices from "../Components/CServices";
 import "./index.css";
 import CProcess from "../Components/CProcess";
+import Partner from "../assets/talent/partner_img.png";
+import FromInputField from "../Components/Form";
 export default function Home() {
     return (
         <>
-            <div className="main">
+            <div className="main"
+                style={{
+                    position: "relative",
+                    zIndex: 999999999999999999,
+                }}
+            >
                 <CAuthor />
                 <CAbout />
                 {/* 
@@ -27,6 +34,11 @@ export default function Home() {
                 {/* <CCount />
                 <CServices />
                 */}
+                <div className="partner">
+
+                </div>
+                <CForm />
+
                 <CFooter />
                 {/* <div
                     className='d-lg-block d-none'

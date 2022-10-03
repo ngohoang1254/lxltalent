@@ -1,0 +1,12 @@
+.ant-form-item-row {
+    width: 80%
+}
+
+.ant-form-item {
+    display: flex;
+    justify-content: center;
+}
+
+.ant-form-item-label {
+    min-width: 150px
+}
