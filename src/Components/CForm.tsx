@@ -1,23 +1,24 @@
 import React, { useRef } from "react";
-import { Button, Form, Input, InputNumber } from 'antd';
+import { Button, Form, Input, InputNumber, message } from 'antd';
 import emailjs from '@emailjs/browser';
 import { FormInstance } from "antd/es/form/Form";
 import "./form.css";
+import axios from "axios"
 export default function FormInputField() {
-    // const [form] = Form.useForm();
-    const form = useRef<any>();
+    const [form] = Form.useForm();
     const layout = {
         labelCol: { span: 4 },
         wrapperCol: { span: 16 },
     };
-    const onFinish = (values: any) => {
-        values.preventDefault();
-        emailjs.sendForm('service_lonv5ce', 'template_op3ghss', form?.current, '2EfXaFjES9gTckh1p')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
+    const onFinish = (values: { name: string, email: string, contact: string, website: string, message: string }) => {
+        debugger;
+        axios.post("https://sheet.best/api/sheets/00272edb-dd78-4aa4-a044-cc92c3b7ec27", values).then((response) => {
+            alert("Cảm ơn bạn, chúng tôi sẽ liên hệ lại");
+            form.resetFields();
+
+        }).catch((err) => {
+            alert("Lỗi khi gửi thông tin");
+        })
     };
     return (
         <div style={{
@@ -30,8 +31,8 @@ export default function FormInputField() {
                     margin: "20px 0px",
                 }}
             >COMPLETE THIS FORM</h1>
-            <form ref={form} onSubmit={onFinish}>
-                {/* <Form {...layout} name="nest-messages" > */}
+
+            <Form {...layout} name="nest-messages" onFinish={onFinish} form={form}>
                 <Form.Item name={"name"} label="Name" rules={[{ required: true }]}>
                     <Input
                         placeholder="Name"
@@ -75,9 +76,9 @@ export default function FormInputField() {
                         Submit
                     </Button>
                 </Form.Item>
-                {/* </Form> */}
+            </Form>
 
-            </form>
+            {/* </form> */}
         </div >
     )
 }
